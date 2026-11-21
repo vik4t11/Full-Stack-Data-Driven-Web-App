@@ -1,4 +1,4 @@
-# Artist Commerce Web Application
+# Indie Artist Web-App
 
 **Full-Stack Web Development | Python | Django | SQL | HTML | CSS | JavaScript**
 
@@ -273,10 +273,11 @@ A key learning objective is understanding how relational tables connect through 
 The intention is to use the project as a practical environment for developing SQL knowledge alongside Django ORM functionality.
 
 ## Development Journey and Technical Decisions
+### Mon 9th - Fri 20th November
 
 The project has developed through an iterative process of experimentation, implementation, debugging and refinement.
 
-### Frontend Foundations — November 2026
+### Frontend Foundations 
 
 **Objective:** Translate an initial visual concept into an interactive website interface.
 
@@ -291,7 +292,7 @@ Work included:
 
 **Technical learning:** DOM manipulation, JavaScript element selection, CSS positioning and the separation of structure, presentation and behaviour.
 
-### Backend Framework Selection — November 2026
+### Backend Framework Selection 
 
 **Objective:** Move from a static website towards a Python-powered web application.
 
@@ -305,7 +306,7 @@ Work included:
 
 **Technical learning:** Frontend/backend architecture, Python web frameworks and the distinction between local development and deployment.
 
-### Django Integration — November 2026
+### Django Integration 
 
 **Objective:** Connect the visitor interface to Django.
 
@@ -320,7 +321,7 @@ Work included:
 
 **Technical learning:** Django template rendering, form handling, DOM readiness and JavaScript interaction with dynamically rendered page elements.
 
-### Project Restructuring and Debugging — November 2026
+### Project Restructuring and Debugging 
 
 **Objective:** Establish a more organised Django project structure.
 
@@ -335,7 +336,7 @@ Work included:
 
 **Technical learning:** The distinction between a Django project package, application directory and application label, and the importance of maintaining consistent references when restructuring a project.
 
-### Functionality, Usability and Commercial Design — November 2026
+### Functionality, Usability and Commercial Design 
 
 **Objective:** Establish the essential website experience before expanding into more complex features.
 
