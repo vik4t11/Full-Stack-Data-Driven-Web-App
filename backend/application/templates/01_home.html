@@ -1,0 +1,45 @@
+{# Load Django's static-files helper so template assets can be referenced securely. #}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Neli Font | Home</title>
+
+    {# Load the homepage-specific stylesheet. #}
+    <link rel="stylesheet" href="{% static 'css/01_homepage.css' %}">
+</head>
+
+<body>
+    {# Primary homepage navigation. Each link opens a named Django URL. #}
+    <nav class="homepage-navigation">
+
+        {# Link to the manifesto page, using an image as the button label. #}
+        <a href="{% url 'manifesto' %}" class="nav-button">
+            <img src="{% static 'assets/text/manifesto_button.png' %}" alt="Manifesto">
+        </a>
+
+        {# Link to the shop page, using an image as the button label. #}
+        <a href="{% url 'shop' %}" class="nav-button">
+            <img src="{% static 'assets/text/shop_button.png' %}" alt="">
+        </a>
+
+        {# Link to the poetry page, using an image as the button label. #}
+        <a href="{% url 'poetry' %}" class="nav-button">
+            <img src="{% static 'assets/text/poetry_button.png' %}" alt="">
+        </a>
+
+        {# Link to the contact page, using an image as the button label. #}
+        <a href="{% url 'contact' %}" class="nav-button">
+            <img src="{% static 'assets/text/contact_button.png' %}" alt="">
+        </a>
+
+    </nav>
+
+    {# Load homepage interactions after the document has been parsed. #}
+    <script src="{% static 'js/01_homepage.js' %}" defer></script>
+</body>
+
+</html>

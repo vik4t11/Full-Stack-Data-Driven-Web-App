@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- PAGE METADATA AND STYLE SHEET -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neli Font | Shop</title>
+    <link rel="stylesheet" href="{% static 'css/04_shop.css' %}">
+
+</head>
+
+
+<body>
+
+    <!-- SHOP HEADLINE TITLE -->
+        <img
+            src="{% static 'assets/text/twist_shop_title.png' %}"
+            alt="Knickers in a Twist"
+            class="entry-text"
+        >
+
+    <!-- SET SHOP GRID -->
+    <div class="shop-grid">
+
+    <!-- FIRST PRODUCT: MIND THE GAP SMALL -->
+
+    <a href="{% url 'checkout' %}" class="product-card"> <!-- CHECKOUT LINK -->
+
+        <img src="{% static 'assets/shop/00_knickers.jpg' %}" alt="Mind The Gap"> <!-- IMAGE -->
+
+        <h3>Mind The Gap [Small]</h3> <!-- TITLE AND SIZE -->
+
+        <p class="price">£25.00</p> <!-- PRICE -->
+
+    </a>
+
+    <!-- SECOND PRODUCT: TRANSPARENTLY -->
+
+    <a href="{% url 'checkout' %}" class="product-card"> <!-- CHECKOUT LINK -->
+
+        <img src="{% static 'assets/shop/01_knickers.jpg' %}" alt="Transparently"> <!-- IMAGE -->
+
+        <h3>Transparently [Large]</h3> <!-- TITLE AND SIZE -->
+
+        <p class="price">£25.00</p> <!-- PRICE -->
+
+    </a>
+
+    <!-- THIRD PRODUCT: BABY SMALL -->
+     
+    <a href="{% url 'checkout' %}" class="product-card"> <!-- CHECKOUT LINK -->
+    
+        <img src="{% static 'assets/shop/02_knickers.jpg' %}" alt="Bab Y"> <!-- IMAGE -->
+
+        <h3>Bab Y [Small]</h3> <!-- TITLE AND SIZE -->
+
+        <p class="price">£25.00</p> 
+
+    </a>
+
+    <!-- GOT KNICKERS TEXT HEADING INSIDE SHOP GRID -->
+
+    <img
+            src="{% static 'assets/text/got_knickers_heading.png' %}"
+            alt="Got Knickers?"
+            class="heading-text"
+            >
+    
+    <!-- FOURTH PRODUCT: MUSE LARGE -->
+
+    <a href="{% url 'checkout' %}" class="product-card">
+
+        <img src="{% static 'assets/shop/03_knickers.jpg' %}" alt="Muse">
+
+        <h3>Muse [Large]</h3>
+
+
+    </body>
+    </html>
+        <p class="price">£25.00</p>
+
+    </a>
+
+    <!-- FIFTH PRODUCT: SHOW LARGE -->
+
+    <a href="{% url 'checkout' %}" class="product-card">
+
+        <img src="{% static 'assets/shop/04_knickers.jpg' %}" alt="Show">
+
+        <h3>Show [Large]</h3>
+
+        <p class="price">£25.00</p>
+
+    </a>
+    
+
+</div>
+
+<!-- PAINT YOUR OWN KNICKERS TEXT -->
+
+<img
+            src="{% static 'assets/text/paint_knickers.png' %}"
+            alt="Paint Your Own Knickers"
+            class="paint-text"
+            >
+ 
+ <!-- BUTTON TO OPEN PAINT YOUR OWN KNICKERS FEATURE -->
+
+ <button
+            id="paintButton"
+            class="paint-button"
+            type="button"
+            >
+
+            <img
+            src="{% static 'assets\graphics\paint_brush_button.png' %}"
+            alt="Paint your own knickers" 
+            >
+
+    </button>

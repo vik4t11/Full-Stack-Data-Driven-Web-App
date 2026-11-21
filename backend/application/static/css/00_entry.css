@@ -1,0 +1,478 @@
+
+/* 
+   ALL STYLES IN THIS FILE ARE FOR THE ENTRY PAGE
+   Reset default browser styles for all elements 
+   to ensure consistency across different browsers. 
+*/
+
+* { /* Apply the reset styles to every element. */
+    margin: 0; /* Reset default margin for all elements */
+    padding: 0; /* Reset default padding for all elements */
+    box-sizing: border-box; /* Set box-sizing to border-box for all elements */
+}
+
+/* 
+   STYLING FOUNDATIONAL ELEMENTS
+   Set foundational styles for the body element, 
+   including font, color, and background.
+ */
+
+body { /* Style the document body. */
+    min-height: 100vh; /* Set minimum height to fill the viewport height */
+    font-family: "Neli Font", cursive; /* Set the font family for the body */
+    color: #39332C; /* Set the text color for the body */
+    background-image: url("../assets/images/white-wall-background.jpg"); /* Set the background image for the body */
+    background-size: cover; /* Set the background image to cover the entire body */
+    background-position: center; /* Set the background image position to center */
+    background-repeat: no-repeat; /* Set the background image to not repeat because it's a fixed background */
+    background-attachment: fixed; /* Set the background image to be fixed in place when scrolling */
+}
+
+
+/* ENTRY PAGE LAYOUT */
+
+.entry-page { /* Define the entry page layout. */
+    min-height: 100vh; /* Make the entry page fill at least the viewport height. */
+    display: flex; /* Use flexbox for the entry page layout. */
+    flex-direction: column; /* Stack entry page elements vertically. */
+    justify-content: center; /* Center entry page elements vertically. */
+    align-items: center; /* Center entry page elements horizontally. */
+    gap: 20px; /* Add consistent spacing between entry page elements. */
+    padding-top: 0; /* Remove extra space above the entry page content. */
+}
+
+
+/* PAGE HEADING */
+
+.entry-page h1 { /* Style the entry page heading. */
+    width: 100%; /* Allow the heading to use the available width. */
+    max-width: 500px; /* Prevent the heading from becoming too wide. */
+    text-align: center; /* Center the heading text. */
+    font-size: clamp(22px, 5vw, 42px); /* Scale the heading between readable limits. */
+    font-weight: 400; /* Use a regular font weight for the heading. */
+    letter-spacing: clamp(2px, 0.8vw, 5px); /* Scale the spacing between heading letters. */
+}
+
+/* PNG ENTER BUTTON */
+
+.image-button { /* Style the image-based enter button. */
+    display: block; /* Make the button a block-level element. */
+    width: 100%; /* Let the button use the available width. */
+    max-width: 500px; /* Limit the button's maximum width. */
+    margin: 0 auto; /* Center the button horizontally. */
+    padding: 0; /* Remove default button padding. */
+    background: transparent; /* Keep the button background transparent. */
+    border: none; /* Remove the default button border. */
+    cursor: crosshair; /* Show a crosshair cursor over the button. */
+}
+
+.image-button img { /* Style the image inside the button. */
+    display: block; /* Remove inline image spacing and use block layout. */
+    width: 100%; /* Make the image fill the button width. */
+    height: auto; /* Preserve the image aspect ratio. */
+    transition: transform 0.8s ease; /* Smoothly animate image transforms. */
+}
+
+/* MARGIN AND PADDING */
+.image-button { /* Refine the image button spacing and alignment. */
+    justify-self: center; /* Center the button horizontally within its container */
+    align-self: center; /* Center the button vertically within its container */
+    display: block; /* Set display to block for the image button to allow for proper sizing and alignment */
+    width: auto; /* Set the width of the image button to auto to allow for proper sizing and alignment */
+    background: transparent; /* Set the bacground */
+    border: none; /* Set no border for image */
+    padding: 0; /* Set padding for the button space with other objects on page */
+    margin: 0; /* Set margin for the button */
+    cursor: crosshair; /* Set mouse cursor to a cross */
+}
+
+/* BUTTON HOVER ANIMATION */
+
+.image-button:hover img { /* Animate the button image on hover. */
+    transform: scale(1.12) rotate(8deg); /* Enlarge and slightly rotate the image on hover. */
+}
+
+/* KEYBOARD ACCESS */
+
+.image-button:focus-visible { /* Show keyboard focus on the button. */
+    outline: 2px solid black; /* Set the outline color to black for better visibility */
+    outline-offset: 0px; /* Set the outline offset to 5px for better visibility */
+}
+
+/* NELI FONT TEXT PNG */
+
+.entry-text { /* Size and align the entry text image. */
+    display: block; /* Render the entry text image as a block. */
+    width: 90%; /* Use most of the available content width. */
+    max-width: 550px; /* Limit the text image's maximum width. */
+    height: auto; /* Preserve the image aspect ratio. */
+    margin: 0 auto; /* Center the text image horizontally. */
+}
+
+/* TAP KNICKERS TO ENTER TEXT PNG */
+
+/* BUTTON AND DJANGO FORM CONTAINER */
+
+.entry-interaction { /* Lay out the prompt and visitor form. */
+    display: grid; /* Use a grid to layer the prompt and form. */
+    place-items: center; /* Center layered interaction content. */
+    width: min(95%, 850px); /* Keep the interaction area responsive and bounded. */
+    margin: 20px auto; /* Center the interaction area with vertical spacing. */
+    padding: 20px 0; /* Add vertical space around the interaction content. */
+}
+
+/* OVERLAY BUTTON AND FORM. */
+
+.entry-interaction > * { /* Layer each interaction child in one grid cell. */
+    grid-area: 1 / 1;  /* Place each child in the same grid cell so the prompt and form overlap. */
+    width: 100%; /* Keep both overlaid elements aligned to the interaction container's width. */
+}
+
+/* TAP KNICKERS SUBTITLE */
+.tap-knickers-subtitle { /* Size and position the subtitle image. */
+    display: block; /* Render the subtitle image as a block. */
+    width: clamp(160px, 45vw, 300px); /* Scale the subtitle within set limits. */
+    height: auto; /* Preserve the subtitle image aspect ratio. */
+    margin-top: -20px; /* Pull the subtitle upward to control spacing. */
+    margin-bottom: -20px; /* Pull following content upward to control spacing. */
+}
+
+/* VISITOR FORM POPUP */
+
+.modal { /* Position and align the visitor form modal. */
+    position: relative; /* Keep the form in normal document flow so it sits below the text PNG */
+    inset: auto; /* Keep the modal in normal flow instead of positioning it against its edges. */
+    width: 100%; /* Let the modal span the full width of its interaction container. */
+    background: rgba(0, 0, 0, 0); /* Set the background color to transparent for the modal */
+    display: flex; /* Use flexbox to arrange and align the form within the modal. */
+    align-items: flex-start; /* Keep the form aligned to the top of the modal. */
+    justify-content: center; /* Center the form horizontally. */
+    z-index: 1; /* Place the modal above surrounding page content. */
+    margin-top: 0px; /* Cancel the entry-page gap above the form */
+}
+
+/* HIDDEN UNTIL BUTTON CLICKED */
+
+.hidden { /* Hide elements that are not currently active. */
+    display: none; /* Keep elements hidden until they are explicitly shown by the interface. */
+}
+
+/* DJANGO FORM PANEL */
+
+.form-panel { /* Style the visitor form panel. */
+    position: relative; /* Keep the panel positioned within its normal flow. */
+    width: 100%; /* Let the form panel fill its container. */
+    max-width: 850px; /* Limit the form panel's maximum width. */
+    padding: clamp(10px, 3vw, 25px); /* Scale panel padding for different screens. */
+    background: transparent; /* Keep the form panel background transparent. */
+    border: none; /* Remove the panel border. */
+    box-shadow: none; /* Remove the panel shadow. */
+    margin: 0 auto; /* Center the form panel horizontally. */
+}
+
+
+/* FORM FIELDS */
+
+.form-group { /* Space each form field group. */
+    margin-bottom: 20px; /* Add consistent vertical spacing below each form field group. */
+}
+
+.form-group label { /* Style labels for form controls. */
+    display: block; /* Place each label on its own line above its field. */
+    margin-bottom: 8px; /* Separate the label from the associated control. */
+    font-size: 14px; /* Keep labels compact and consistent with form text. */
+}
+
+.form-description { /* Style the form description text. */
+    font-size: 14px; /* Match the descriptive text to the form's standard size. */
+    margin-bottom: 15px; /* Add space below the description before the next field. */
+}
+
+
+/* FORM INPUT FIELDS */
+
+.form-group textarea, /* Style textarea controls. */
+.form-group select { /* Style select controls. */
+    width: 100%; /* Make each field span its form group. */
+    min-height: 50px; /* Keep fields at a usable minimum height. */
+    padding: 10px; /* Add space between field content and its edges. */
+    box-sizing: border-box; /* Include padding in the field dimensions. */
+    resize: vertical; /* Allow textareas to resize vertically. */
+    background: rgba(183, 55, 102, 0.35); /* Apply a translucent pink field background. */
+    color: #39332C; /* Use the primary text color in fields. */
+    border: 1px solid rgba(57, 51, 44, 0.5); /* Define a subtle field boundary. */
+    border-radius: 3px; /* Slightly round the field corners. */
+    font-family: inherit; /* Match the surrounding typography. */
+    font-size: clamp(13px, 2vw, 14px); /* Scale field text for screen size. */
+}
+
+/* DROPDOWN MENU OPTIONS */
+
+.form-group select option { /* Style dropdown options. */
+    background-color: #f3ebee00; /* Keep the option background transparent. */
+    color: #080808; /* Use near-black text for strong contrast. */
+    padding: 10px; /* Add spacing so each menu option is easier to scan and select. */
+}
+
+.form-group select option:hover { /* Highlight hovered dropdown options. */
+    /* Highlight the option currently under the pointer. */
+    background-color: #000000; /* Use a black background for the highlighted option. */
+    color: #ffffff; /* Keep the option text readable with white contrast. */
+}
+ 
+/* CONSENT AND SUBMIT BUTTON ALIGNMENT */
+
+.consent-row {
+.consent-row { /* Define the consent row container. */
+    display: flex; /* Enable a horizontal flex layout. */
+    flex-direction: row; /* Arrange the row items from left to right. */
+    align-items: center; /* Vertically center every item in the row. */
+    justify-content: flex-start; /* Start alignment at the left edge. */
+    gap: 15px; /* Separate the consent controls and submit button. */
+} /* Close the consent row styles. */
+
+.consent { /* Style the consent label and checkbox group. */
+    display: flex; /* Arrange the checkbox and label in a row. */
+    flex-direction: row; /* Keep checkbox and label horizontally aligned. */
+    align-items: center; /* Vertically center the checkbox and label. */
+    gap: 8px; /* Add spacing between checkbox and label. */
+    margin: 0; /* Remove all outer spacing from the consent group. */
+    margin-bottom: 0; /* Ensure no extra space appears below the group. */
+} /* Close the consent group styles. */
+
+.consent input[type="checkbox"] { /* Target the consent checkbox input. */
+    width: 16px; /* Set the checkbox width. */
+    height: 16px; /* Set the checkbox height. */
+    margin: 0; /* Remove default checkbox margins. */
+    accent-color: #000000; /* Make the checked state use black. */
+    cursor: pointer; /* Show a pointer when hovering over the checkbox. */
+} /* Close the consent checkbox styles. */
+
+.consent label { /* Target the text label for consent. */
+    margin: 0; /* Remove default label margins. */
+    padding: 0; /* Remove default label padding. */
+    line-height: 1; /* Match the label height closely to its text. */
+    font-size: 14px; /* Set the consent label text size. */
+} /* Close the consent label styles. */
+
+.arrow-button { /* Style the submit arrow button. */
+    display: inline-flex; /* Use a flex container within inline layout. */
+    align-items: center; /* Vertically center the button icon. */
+    justify-content: center; /* Horizontally center the button icon. */
+    align-self: center; /* Keep the button vertically centered in the row. */
+    padding: 0; /* Remove default button padding. */
+    margin: 0; /* Remove default button margins. */
+    background: transparent; /* Keep the button background clear. */
+    border: none; /* Remove the default button border. */
+    font-size: 18px; /* Set the arrow icon text size. */
+    line-height: 1; /* Keep the arrow icon tightly sized. */
+    cursor: pointer; /* Show a pointer while hovering over the button. */
+} /* Close the arrow button styles. */
+}
+
+
+.form-group textarea, /* Reapply shared textarea sizing. */
+.form-group select { /* Reapply shared select sizing. */
+    width: 100%; /* Make the field span its form-group. */
+    height: 50px; /* Keep textareas and selects consistently tall. */
+    padding: 10px; /* Add space between the content and field edges. */
+    resize: vertical; /* Allow textareas to grow vertically. */
+    box-sizing: border-box; /* Include padding within the field dimensions. */
+    width: 100%; /* Preserve full-width sizing. */
+    padding: 10px; /* Keep the field content comfortably inset. */
+    background: transparent; /* Let the surrounding form background show through. */
+}
+
+/* DROPDOWN CONTAINER */
+
+.custom-dropdown { /* Contain and anchor the custom dropdown. */
+    position: relative; /* Anchor the dropdown menu to this container. */
+    width: 100%; /* Match the width of the surrounding form field. */
+}
+
+.dropdown-native { /* Visually hide the native dropdown control. */
+    /* Hide the original Django select visually */
+    position: absolute; /* Remove the native select from the normal layout. */
+    width: 1px; /* Keep it available while minimizing its visible footprint. */
+    height: 1px; /* Match the minimal width to prevent it taking up space. */
+    opacity: 0; /* Hide the native control behind the custom dropdown. */
+    pointer-events: none; /* Route pointer interaction to the custom trigger. */
+}
+
+/* CLOSED DROP-DOWN */
+
+.custom-dropdown-trigger { /* Style the closed dropdown trigger. */
+    /* Stretch the trigger and separate its label from its indicator. */
+    width: 100%; /* Match the width of the dropdown container. */
+    display: flex; /* Arrange the label and indicator in one row. */
+    justify-content: space-between; /* Separate the label from the indicator. */
+    align-items: center; /* Vertically center the trigger contents. */
+    padding: 12px; /* Add comfortable spacing around the label. */
+    background: #e8d5dc00; /* Keep the trigger background transparent. */
+    color: #39332C; /* Use the form's primary text color. */
+    border: 1px solid #050505d2; /* Define the trigger boundary. */
+    font-family: inherit; /* Preserve the surrounding form typography. */
+    font-size: 14px; /* Keep the trigger text compact and readable. */
+    text-align: left; /* Align the selected option with the form fields. */
+    cursor: pointer; /* Indicate that the trigger is interactive. */
+}
+
+/* Options panel */
+.custom-dropdown-menu { /* Style and position the dropdown options menu. */
+    /* Position the options list directly below the trigger. */
+    display: none; /* Keep the options hidden until the dropdown is opened. */
+    position: absolute; /* Anchor the menu to the dropdown container. */
+    top: 100%; /* Place the menu immediately below the trigger. */
+    left: 0; /* Align the menu with the container's left edge. */
+    width: 100%; /* Match the width of the dropdown container. */
+    max-height: 220px; /* Limit the menu height for long option lists. */
+    overflow-y: auto; /* Allow vertical scrolling when needed. */
+    background: #EDE8E2; /* Give the options panel a solid background. */
+    border: 1px solid #8F6477; /* Define the panel boundary. */
+    z-index: 100; /* Keep the menu above nearby form elements. */
+}
+
+/* Show menu when open */
+.custom-dropdown.open .custom-dropdown-menu { /* Display the menu while the dropdown is open. */
+    display: block; /* Make full-width row. */
+}
+
+/* Individual options */
+.custom-dropdown-option { /* Style each custom dropdown option. */
+    /* Make each option a full-width, left-aligned menu item. */
+    display: block; /* Make each option a separate, full-width row. */
+    width: 100%; /* Extend the clickable area across the menu. */
+    padding: 11px 12px; /* Add space around the option label. */
+    background: transparent; /* Keep the default option background clear. */
+    color: #39332C; /* Use the standard text color. */
+    border: none; /* Remove the browser's default button border. */
+    font-family: inherit; /* Match the surrounding interface typography. */
+    font-size: 14px; /* Keep option text compact and readable. */
+    text-align: left; /* Align labels consistently to the left. */
+    cursor: pointer; /* Indicate that the option is interactive. */
+}
+
+/* Your requested hover colour */
+.custom-dropdown-option:hover, /* Highlight hovered options. */
+.custom-dropdown-option:focus-visible { /* Highlight focused options. */
+    background: #000000; /* Use a high-contrast black highlight. */
+    color: #ffffff; /* Keep the option label readable on the dark background. */
+    outline: none; /* Rely on the custom background as the focus indicator. */
+}
+
+/* Dropdown scrollbar */
+.custom-dropdown-menu { /* Configure the dropdown scrollbar. */
+    max-height: 220px; /* Limit the menu height so long lists remain manageable. */
+    overflow-y: auto; /* Enable vertical scrolling when options exceed the height. */
+    scrollbar-width: thin; /* Use a compact scrollbar in Firefox. */
+    scrollbar-color: #B9ADA1 #EDE8E2; /* Style the thumb and track in Firefox. */
+}
+
+/* Chrome, Edge and Safari */
+/* Keep the WebKit scrollbar narrow so it does not distract from the menu. */
+.custom-dropdown-menu::-webkit-scrollbar { /* Style the WebKit scrollbar width. */
+    width: 6px; /* Keep the scrollbar compact while still visible. */
+}
+
+/* Match the scrollbar track to the dropdown's light background. */
+.custom-dropdown-menu::-webkit-scrollbar-track { /* Style the WebKit scrollbar track. */
+    background: #EDE8E2; /* Match the scrollbar track to the dropdown background. */
+}
+
+/* Use a muted thumb colour that remains visible against the track. */
+.custom-dropdown-menu::-webkit-scrollbar-thumb { /* Style the WebKit scrollbar thumb. */
+    background: #B9ADA1; /* Use a warm beige thumb that complements the dropdown palette. */
+    border-radius: 10px; /* Round the scrollbar thumb for a softer appearance. */
+}
+
+/* Darken the thumb while the user is interacting with the scrollbar. */
+.custom-dropdown-menu::-webkit-scrollbar-thumb:hover { /* Style the scrollbar thumb on hover. */
+    background: #39332C; /* Darken the scrollbar thumb on hover for clearer interaction feedback. */
+}
+
+/* MOBILE RESPONSIVE ENTRY PAGE */
+
+@media (max-width: 600px) { /* Apply entry page styles on narrow screens. */
+
+    .entry-page { /* Adjust the entry layout for mobile screens. */
+        min-height: 100svh; /* Fill the small viewport height accurately. */
+        justify-content: center; /* Keep mobile content vertically centered. */
+        gap: 12px; /* Reduce spacing between mobile entry elements. */
+        padding: 25px 20px; /* Add compact mobile page padding. */
+    }
+
+    .entry-page h1 { /* Adjust the heading for mobile screens. */
+        width: 100%; /* Let the mobile heading use the available width. */
+        font-size: clamp(24px, 7vw, 36px); /* Scale the heading for mobile screens. */
+        letter-spacing: 3px; /* Keep consistent spacing between mobile heading letters. */
+    }
+
+    .entry-text { /* Adjust the entry text image for mobile screens. */
+        width: 100%; /* Let the entry text image fit the mobile container. */
+        max-width: 400px; /* Limit the mobile text image width. */
+        height: auto; /* Preserve the text image aspect ratio. */
+    }
+
+    .image-button { /* Adjust the image button for mobile screens. */
+        width: 85%; /* Reduce the button width on mobile screens. */
+        max-width: 350px; /* Limit the mobile button width. */
+        margin: 0 auto; /* Center the mobile button. */
+    }
+
+    .tap-knickers-subtitle { /* Adjust the subtitle for mobile screens. */
+        width: min(70%, 250px); /* Keep the subtitle compact on mobile screens. */
+        margin-top: -20px; /* Pull the subtitle upward on mobile. */
+        margin-bottom: -20px; /* Reduce the space below the subtitle on mobile. */
+    }
+
+}
+
+/* MOBILE CONSENT AND SUBMIT ALIGNMENT */
+
+@media (max-width: 600px) { /* Apply compact consent and submit alignment on small screens. */
+
+    .consent-row { /* Keep the consent and submit control in a row. */
+        display: flex; /* Use flexbox for horizontal alignment. */
+        flex-direction: row; /* Place children side by side. */
+        align-items: center; /* Vertically center the children. */
+        justify-content: flex-start; /* Align children to the row start. */
+        gap: 12px; /* Add spacing between the children. */
+        width: 100%; /* Use the full available row width. */
+    } /* End consent row styles. */
+
+    .consent { /* Align the checkbox and its label horizontally. */
+        display: flex; /* Use flexbox for the consent contents. */
+        flex-direction: row; /* Place the checkbox and label side by side. */
+        align-items: center; /* Vertically center the checkbox and label. */
+        gap: 7px; /* Add spacing between the checkbox and label. */
+        margin: 0; /* Remove default outer spacing. */
+        padding: 0; /* Remove default inner spacing. */
+    } /* End consent styles. */
+
+    .consent input[type="checkbox"] { /* Keep the checkbox compact and stable. */
+        width: 15px; /* Set the checkbox width. */
+        height: 15px; /* Set the checkbox height. */
+        margin: 0; /* Remove default checkbox margins. */
+        flex-shrink: 0; /* Prevent the checkbox from shrinking. */
+    } /* End checkbox styles. */
+
+    .consent label { /* Keep consent text compact on mobile. */
+        font-size: 12px; /* Set a small mobile label size. */
+        line-height: 1; /* Match line height to the font size. */
+        margin: 0; /* Remove default label margins. */
+        white-space: nowrap; /* Keep the label on one line. */
+    } /* End consent label styles. */
+
+    .arrow-button { /* Center and size the submit arrow on mobile. */
+        display: inline-flex; /* Use inline flexbox for the button content. */
+        align-items: center; /* Vertically center the arrow. */
+        justify-content: center; /* Horizontally center the arrow. */
+        align-self: center; /* Center the button within the row. */
+        font-size: 17px; /* Set the mobile arrow size. */
+        line-height: 1; /* Keep the arrow line compact. */
+        padding: 0; /* Remove button padding. */
+        margin: 0; /* Remove button margins. */
+        transform: none; /* Disable any inherited transform. */
+    } /* End arrow button styles. */
+
+} 

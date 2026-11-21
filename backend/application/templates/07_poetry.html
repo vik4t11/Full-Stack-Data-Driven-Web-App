@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neli Font | Poetry</title>
+
+    <!-- Load the stylesheet through Django's static files system. -->
+    <link rel="stylesheet" href="{% static 'css/07_poetry.css' %}">
+</head>
+
+<body>
+
+    <div class="book">
+
+        <!-- The active page is shown first; the following page is available through the controls. -->
+        <div class="page active">
+            <img src="{% static 'assets/poetry/pillow_talk.jpg' %}" alt="Pillow Talk">
+        </div>
+
+        <div class="page">
+            <img src="{% static 'assets/poetry/start_believing.jpg' %}" alt="Poem titled Start Believing, presented in a calm and inspirational style">
+        </div>
+
+    </div>
+
+    <!-- Navigation buttons for moving between poetry pages. -->
+    <div class="controls">
+        <button id="prevBtn">←</button>
+        <button id="nextBtn">→</button>
+    </div>
+
+    <!-- Defer the page-turning script until the document has been parsed. -->
+    <script src="{% static 'js/07_poetry.js' %}" defer></script>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+venv/
+
+# Private creative assets
+studio/static/assets/graphics/
+studio/static/assets/icons/
+studio/static/assets/images/
+studio/static/assets/poetry/
+studio/static/assets/shop/
+studio/static/assets/text/
+
+# Django database
+*.sqlite3
+.db
+
+# IDE
+.vscode/
+
+# Environment files
+.env
+.env.*
+!.env.example

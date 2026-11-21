@@ -1,0 +1,156 @@
+/* 
+   ALL STYLES IN THIS FILE ARE FOR THE POETRY PAGE
+   Reset default browser styles for all elements 
+   to ensure consistency across different browsers. 
+*/
+
+* {
+    margin: 0; /* Reset default margin for all elements */
+    padding: 0; /* Reset default padding for all elements */
+    box-sizing: border-box; /* Set box-sizing to border-box for all elements */
+}
+
+/* 
+   STYLING FOUNDATIONAL ELEMENTS
+   Set foundational styles for the body element, 
+   including font, color, and background.
+ */
+
+body {
+    min-height: 100vh; /* Set minimum height to fill the viewport height */
+    font-family: "Neli Font", cursive; /* Set the font family for the body */
+    color: #39332C; /* Set the text color for the body */
+    background-image: url("/static/assets/images/white-wall-background.jpg"); /* Set the background image for the body */
+    background-size: cover; /* Set the background image to cover the entire body */
+    background-position: center; /* Set the background image position to center */
+    background-repeat: no-repeat; /* Set the background image to not repeat because it's a fixed background */
+    background-attachment: fixed; /* Set the background image to be fixed in place when scrolling */
+} 
+
+/* Center the poetry page content both vertically and horizontally */
+body {
+    margin: 0; /* Remove default body spacing around the poetry page */
+    min-height: 100vh; /* Keep the body at least as tall as the viewport */
+    display: flex; /* Use flexbox to arrange the poetry page content */
+    flex-direction: column; /* Stack the poetry page content vertically */
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Center the content vertically */
+}
+
+/* Define a smaller book size and perspective (used as a base layout) */
+.book {
+    position: relative; /* Keep the book in the normal document flow for positioning child elements. */
+    width: 400px; /* Set the base width of the book. */
+    height: 250px; /* Set the base height of the book. */
+    perspective: 1000px; /* Apply 3D perspective to the book and its pages. */
+}
+
+/* Define the final portrait book dimensions and stronger 3D perspective */
+.book {
+    position: relative; /* Keep the book positioned in the document flow for child elements */
+    width: 400px; /* Set the final portrait width of the book */
+    height: 500px; /* Set the final portrait height of the book */
+    perspective: 1250px; /* Add stronger 3D depth for page-turn animations */
+}
+
+/* Base styling for each book page */
+.page {
+    position: absolute; /* Position the page within the book container. */
+    inset: 0; /* Stretch the page to cover all sides of the container. */
+    background: #fffef8; /* Use a warm off-white color for the page surface. */
+
+    /* Add soft depth beneath the page */
+    box-shadow:
+        0 5px 10px rgba(0,0,0,.1), /* Add a subtle, close shadow beneath the page */
+        0 20px 40px rgba(0,0,0,.15); /* Add a broader, softer shadow for depth */
+
+    transform-origin: left center; /* Pivot the page from its left edge so it turns like a physical page */
+    backface-visibility: hidden; /* Hide the reverse side of the page during its 3D rotation */
+
+    /* Animate page rotation and shadow changes smoothly */
+    transition:
+        transform 1.2s cubic-bezier(.65,0,.35,1), /* Smoothly animate page-turn rotation over 1.2 seconds */
+        box-shadow 1.2s ease; /* Fade the page shadow smoothly over 1.2 seconds */
+
+    display: none; /* Hide inactive pages until they are selected */
+}
+
+.page.active {
+    display: block; /* Display the currently selected page */
+}
+
+.page.turning-forward {
+    transform: rotateY(-180deg); /* Rotate the page toward the left when moving forward */
+
+    box-shadow:
+        -30px 20px 60px rgba(0,0,0,.25); /* Emphasize depth on the left side during the turn */
+}
+
+.page.turning-backward {
+    transform: rotateY(-180deg); /* Rotate the page toward the right when moving backward */
+    
+    box-shadow:
+        30px 20px 60px rgba(0,0,0,.25); /* Emphasize depth on the right side during the turn */
+}
+
+/* Scale each page image to fit while preserving its aspect ratio */
+.page img {
+    width: 100%; /* Stretch the image across the full width of the page. */
+    height: 100%; /* Stretch the image across the full height of the page. */
+    object-fit: contain; /* Preserve the image proportions while fitting it inside the page. */
+    pointer-events: none; /* Let clicks pass through the image to the page controls. */
+}
+
+/* Ensure the active page is visible */
+.page.active {
+    display: block; /* Show the currently selected page. */
+}
+
+/* Generic page-turn rotation state */
+.page.turn {
+    transform: rotateY(-180deg); /* Rotate the page to create the turn effect. */
+}
+
+/* Fit page artwork within the page container */
+.page img {
+    width: 100%; /* Fill the page container horizontally. */
+    height: 100%; /* Fill the page container vertically. */
+    object-fit: contain; /* Preserve the artwork's aspect ratio. */
+}
+
+/* ARROW NAVIGATION */
+
+/* Position the previous and next controls over the center of the book */
+.controls {
+    position: absolute; /* Place the controls independently within their positioned parent */
+    top: 50%; /* Center the controls vertically relative to the parent */
+    left: 50%; /* Center the controls horizontally relative to the parent */
+    width: 600px; /* Set a wide area so the arrow buttons sit at opposite ends */
+    transform: translate(-50%, -50%); /* Shift the controls left and up by half their own size */
+    display: flex; /* Arrange the navigation buttons in a horizontal row */
+    justify-content: space-between; /* Keep the previous and next buttons at opposite ends */
+    align-items: center; /* Vertically align the navigation buttons */
+    pointer-events: none; /* Prevent the container itself from blocking page interactions */
+}
+
+/* Style the navigation buttons as plain arrow controls */
+.controls button {
+    background: transparent; /* Remove default button appearance */
+    border: none; /* Remove the button's default border. */
+    outline: none; /* Remove the default focus outline. */
+    box-shadow: none; /* Remove any default button shadow. */
+    pointer-events: auto; /* Allow the arrow buttons to receive clicks */
+
+    /* Arrow styling */
+    font-size: 2rem; /* Set a large size for the navigation arrows. */
+    color: #39332C; /* Match the arrows to the page's text color. */
+    cursor: crosshair; /* Show a crosshair cursor when hovering over an arrow. */
+    padding: 10px; /* Remove default spacing */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth hover effect */
+}
+
+/* Enlarge and soften navigation arrows when hovered */
+.controls button:hover {
+    transform: scale(1.2); /* Slightly enlarge the arrow on hover. */
+    opacity: 0.6; /* Soften the arrow while it is hovered. */
+}

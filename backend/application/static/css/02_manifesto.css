@@ -1,0 +1,28 @@
+/* 
+   ALL STYLES IN THIS FILE ARE FOR THE ENTRY PAGE
+   Reset default browser styles for all elements 
+   to ensure consistency across different browsers. 
+*/
+
+* {
+    margin: 0; /* Reset default margin for all elements */
+    padding: 0; /* Reset default padding for all elements */
+    box-sizing: border-box; /* Set box-sizing to border-box for all elements */
+}
+
+/* 
+   STYLING FOUNDATIONAL ELEMENTS
+   Set foundational styles for the body element, 
+   including font, color, and background.
+ */
+
+body {
+    min-height: 100vh; /* Set minimum height to fill the viewport height */
+    font-family: "Neli Font", cursive; /* Set the font family for the body */
+    color: #39332C; /* Set the text color for the body */
+    background-image: url("/static/assets/images/white-wall-background.jpg"); /* Set the background image for the body */
+    background-size: cover; /* Set the background image to cover the entire body */
+    background-position: center; /* Set the background image position to center */
+    background-repeat: no-repeat; /* Set the background image to not repeat because it's a fixed background */
+    background-attachment: fixed; /* Set the background image to be fixed in place when scrolling */
+} 

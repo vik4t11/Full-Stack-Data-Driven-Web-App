@@ -1,0 +1,26 @@
+{% load static %}
+<!-- Load Django's static template tag for stylesheet, script, and image assets. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Document metadata and page title. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Neli Font | Contact</title>
+
+    <link rel="stylesheet" href="{% static 'css/03_contact.css' %}">
+</head>
+
+<body>
+    <!-- Contact page artwork. -->
+<img
+        src="{% static 'assets/graphics/seven_sister.png' %}"
+    >
+
+</body>
+
+    <!-- Load page-specific JavaScript after the document is parsed. -->
+    <script src="{% static 'js/03_contact.js' %}" defer></script>
+
+</html>

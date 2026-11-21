@@ -1,0 +1,246 @@
+/* 
+   ALL STYLES IN THIS FILE ARE FOR THE ENTRY PAGE
+   Reset default browser styles for all elements 
+   to ensure consistency across different browsers. 
+*/
+
+* {
+    margin: 0; /* Reset default margin for all elements */
+    padding: 0; /* Reset default padding for all elements */
+    box-sizing: border-box; /* Set box-sizing to border-box for all elements */
+}
+
+/* 
+   STYLING FOUNDATIONAL ELEMENTS
+   Set foundational styles for the body element, 
+   including font, color, and background.
+ */
+
+body {
+    min-height: 100vh; /* Set minimum height to fill the viewport height */
+    font-family: "Neli Font", cursive; /* Set the font family for the body */
+    color: #39332C; /* Set the text color for the body */
+    background-image: url("/static/assets/images/white-wall-background.jpg"); /* Set the background image for the body */
+    background-size: cover; /* Set the background image to cover the entire body */
+    background-position: center; /* Set the background image position to center */
+    background-repeat: no-repeat; /* Set the background image to not repeat because it's a fixed background */
+    background-attachment: fixed; /* Set the background image to be fixed in place when scrolling */
+}
+
+/* ENTRY TEXT */
+
+.entry-text {
+    display: block; /* Place the entry text in its own block. */
+    width: min(400px, 90%); /* Keep it compact while fitting narrow screens. */
+    height: auto; /* Let the element height follow its content. */
+    margin: 0 0 0 max(clamp(10px, 2vw, 20px), calc((100% - 1000px) / 2 + clamp(10px, 2vw, 20px))); /* Align with the centered content and retain a viewport gutter. */
+    padding-top: clamp(20px, 4vw, 40px); /* Add responsive space above the text. */
+    padding-left: 0; /* Avoid an additional horizontal inset. */
+}
+
+/* HEADING TEXT */
+
+.heading-text {
+    display: block; /* Place the heading image on its own line. */
+    width: min(350px, 90%); /* Keep the heading compact while fitting smaller screens. */
+    height: auto; /* Preserve the image's aspect ratio. */
+    margin: clamp(100px, 4vw, 40px) auto 0; /* Center the heading and add responsive top spacing. */
+}
+
+
+/* SHOP GRID */
+
+.shop-grid {
+    display: grid; /* Arrange products in a responsive two-column grid. */
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Keep both columns equal in width while allowing them to shrink. */
+    gap: clamp(15px, 3vw, 30px); /* Add responsive spacing between product cards. */
+    width: 100%; /* Make the grid fill its container without exceeding the content width. */
+    max-width: 1000px; /* Keep the product grid within a readable maximum width. */
+    margin: 0 auto; /* Center the grid horizontally within its parent. */
+    padding: clamp(10px, 2vw, 20px); /* Add responsive inner spacing around the products. */
+}
+
+/* PRODUCT CARD */
+
+.product-card {
+    display: block; /* Make the entire card follow block layout. */
+    min-width: 0; /* Allow the card to shrink within its grid column. */
+    text-decoration: none; /* Remove the default link underline. */
+    color: inherit; /* Match the surrounding text color. */
+    background: transparent; /* Keep the page background visible through the card. */
+    padding: clamp(10px, 2.5vw, 25px); /* Add responsive spacing inside the card. */
+    border-radius: 8px; /* Slightly round the card corners. */
+
+    transition:
+        transform 0.3s ease, /* Smooth the card's movement on hover. */
+        box-shadow 0.3s ease; /* Smooth any shadow change on hover. */
+}
+
+/* PRODUCT CARD HOVER */
+
+.product-card:hover {
+    transform: translateY(-5px); /* Lift the card slightly upward on hover. */
+}
+
+/* PRODUCT CARD IMAGE */
+
+.product-card img {
+    display: block; /* Remove inline image spacing and keep the image on its own line. */
+    width: 100%; /* Make the product image fill the card width. */
+    height: auto; /* Preserve the image's original aspect ratio. */
+}
+
+/* PRODUCT CARD HEADING */
+
+.product-card h3 {
+    margin: 10px 0 2px; /* Add space above the product title and a small gap below it. */
+    font-weight: lighter; /* Use a lighter weight for product titles. */
+}
+
+/* PRODUCT CARD PRICE */
+
+.price {
+    font-weight: lighter; /* Keep price text visually light. */
+}
+
+/* PAINT TEXT */
+
+.paint-text {
+    display: block; /* Place the paint text image on its own line. */
+    width: min(600px, 90%); /* Keep the image responsive while limiting its maximum width. */
+    height: auto; /* Preserve the image's original aspect ratio. */
+    margin: 5px auto 0; /* Center the image and add a small top gap. */
+}
+
+/* PAINT BUTTON */
+
+.paint-button {
+    justify-self: center; /* Center the button within a grid container. */
+    align-self: center; /* Center the button along the cross axis. */
+    display: block; /* Keep the button on its own line. */
+    width: min(500px, 90%); /* Limit the button width while keeping it responsive. */
+    background: none; /* Remove the button's default background. */
+    border: none; /* Remove the browser's default button border. */
+    padding: 0; /* Prevent extra space around the button content. */
+    margin: 10px auto 0; /* Add top spacing and center the button horizontally. */
+    cursor: crosshair; /* Show a crosshair cursor over the paint button. */
+}
+
+.paint-button img {
+    display: block; /* Remove inline spacing and keep the image on its own line. */
+    width: 100%; /* Make the image fill the button width. */
+    height: auto; /* Preserve the image's aspect ratio. */
+    margin: 0 auto; /* Center the image horizontally. */
+    transition: transform 0.8s ease; /* Smooth the hover transformation. */
+}
+
+/* HOVER ANIMATION */
+
+@media (hover: hover) and (pointer: fine) {
+    /* Keep the paint image centered while applying the hover effect. */
+    .paint-button img {
+        transform-origin: center;
+    }
+
+    /* Slightly enlarge and tilt the paint image on pointer-capable devices. */
+    .paint-button:hover img {
+        transform: scale(1.03) rotate(2deg);
+    }
+}
+
+
+/* TABLET RESPONSIVENESS */
+
+@media screen and (max-width: 768px) {
+
+    /* Reduce spacing and constrain content for tablet-sized screens. */
+    .entry-text {
+        width: 90%; /* Keep the entry text within the tablet viewport. */
+        margin-left: clamp(10px, 2vw, 20px); /* Preserve a responsive left gutter. */
+    }
+
+    /* Keep the heading centered while slightly reducing its maximum width. */
+    .heading-text {
+        width: min(320px, 85%); /* Prevent the heading from exceeding the tablet viewport width. */
+        margin: 0 auto; /* Center the heading horizontally within the available space. */
+    }
+
+    /* Center the description and prevent it from becoming too wide. */
+    .description-box {
+        width: 85%; /* Keep the description comfortably within the viewport. */
+        margin: 15px auto 0; /* Add top spacing and center the box horizontally. */
+    }
+
+    /* Preserve the two-column product layout on tablet screens. */
+    .shop-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));  /* Keep both product columns equal while allowing them to shrink. */
+        gap: 15px; /* Add a consistent 15px gap between product cards. */
+    }
+
+    /* Scale the paint text image to fit the tablet viewport. */
+    .paint-text {
+        width: 90%; /* Keep the image within the tablet viewport width. */
+        margin: 10px auto; /* Add vertical spacing and center the image horizontally. */
+    }
+
+    /* Limit the paint button width while keeping it responsive. */
+    .paint-button {
+        width: min(400px, 90%); /* Cap the width at 400px while allowing it to shrink on narrow screens. */
+    }
+}
+
+
+/* 
+   MOBILE RESPONSIVENESS
+   Adjust the layout and spacing for screens up to 480px wide.
+*/
+@media screen and (max-width: 480px) {
+
+    /* Keep the background fixed to the top so it remains readable while scrolling. */
+    body {
+        background-attachment: scroll; /* Allow the background to scroll on mobile devices. */
+        background-position: center top; /* Anchor the background image at the top center. */
+    }
+
+    /* Reduce the entry text width and position it near the left edge. */
+    .entry-text {
+        width: min(500px, calc(100% - 20px)); /* Fit the text within the mobile viewport with 10px gutters. */
+        margin-left: 10px; /* Add a consistent left margin on narrow screens. */
+        padding: 10px 0 0; /* Add only top spacing to the entry text. */
+    }
+
+    /* Resize and separate the heading from the content below it. */
+    .heading-text {
+        width: 90%; /* Make the heading fill most of the mobile width. */
+        margin-top: 20px; /* Add space above the heading. */
+        margin-bottom: 40px; /* Add space below the heading before the shop grid. */
+    }
+
+    /* Convert the two-column product grid into a single-column layout. */
+    .shop-grid {
+        grid-template-columns: 1fr; /* Place one product card in each grid row. */
+        gap: 15px; /* Add vertical and horizontal breathing room between cards. */
+        padding: 10px; /* Keep the grid inset from the viewport edges. */
+    }
+
+    /* Increase internal spacing for each product card on mobile. */
+    .product-card {
+        padding: 20px; /* Provide comfortable padding around mobile product content. */
+    }
+
+    /* Reduce the paint text image width for the smaller viewport. */
+    .paint-text {
+        width: 80%; /* Keep the image centered and proportionate to the screen. */
+    }
+
+    /* Make the paint button responsive and center it horizontally. */
+    .paint-button {
+        width: 90%; /* Use most of the available mobile width. */
+        margin: 10px auto; /* Center the button and add vertical spacing. */
+    }
+
+    /* Disable the paint button hover transform on touch-focused layouts. */
+    .paint-button:hover img {
+        transform: none; /* Prevent unwanted hover movement on mobile devices. */
+    }
+}

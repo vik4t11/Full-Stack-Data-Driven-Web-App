@@ -1,0 +1,187 @@
+
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>N3L1F0NT</title>
+
+    <link rel="stylesheet" href="{% static 'css/00_entry.css' %}">
+</head>
+
+<body>
+
+    <main class="entry-page">
+
+        <!-- TITLE PNG -->
+        <img
+            src="{% static 'assets/text/neli_font_title.png' %}"
+            alt="Welcome to Neli Font"
+            class="entry-text"
+        >
+
+        <!-- SUBTITLE PNG -->
+        <img
+            src="{% static 'assets/text/tap_knickers_text.png' %}"
+            alt="Introduction"
+            class="tap-knickers-subtitle"
+        >
+
+        <!-- BUTTON AND FORM SHARE THE SAME POSITION -->
+        <div class="entry-interaction">
+
+            <!-- IMAGE BUTTON -->
+            <button
+                id="enterButton"
+                class="image-button"
+                type="button"
+            >
+
+                <img
+                    src="{% static 'assets\graphics\show_knickers.png' %}"
+                    alt="Enter website" 
+                >
+
+            </button>
+
+            <!-- DJANGO VISITOR FORM -->
+            <div id="visitorModal" class="modal hidden">
+
+                <button
+                    id="closeButton"
+                    class="close-button"
+                    type="button"
+                    aria-label="Close form"
+                >
+                </button>
+
+                <div class="form-panel">
+
+                    <form method="post">
+
+                        {% csrf_token %}
+
+                        <!-- REASON FOR VISIT -->
+                        <div class="form-group">
+
+                            <label for="{{ form.reason_for_visit.id_for_label }}">
+                                What led you to this space?
+                            </label>
+
+                            <div class="custom-dropdown" id="reasonDropdown">
+
+    <!-- Hidden select: keeps the field connected to Django -->
+    <select
+        name="{{ form.reason_for_visit.html_name }}"
+        id="{{ form.reason_for_visit.id_for_label }}"
+        class="dropdown-native"
+        aria-hidden="true"
+        tabindex="-1"
+    >
+        {% for value, label in form.reason_for_visit.field.choices %}
+            <option
+                value="{{ value }}"
+                {% if form.reason_for_visit.value|stringformat:"s" == value|stringformat:"s" %}selected{% endif %}
+            >
+                {{ label }}
+            </option>
+        {% endfor %}
+    </select>
+
+    <!-- Visible dropdown button -->
+    <button
+        type="button"
+        class="custom-dropdown-trigger"
+        aria-haspopup="listbox"
+        aria-expanded="false"
+    >
+        <span class="dropdown-current">What brings you here?</span>
+        <span class="dropdown-arrow">X</span>
+    </button>
+
+   
+<!-- Custom options -->
+<div class="custom-dropdown-menu" role="listbox">
+
+    {% for value, label in form.reason_for_visit.field.choices %}
+
+        {% if value != "" %}
+            <button
+                type="button"
+                class="custom-dropdown-option"
+                role="option"
+                data-value="{{ value }}"
+            >
+                {{ label }}
+            </button>
+        {% endif %}
+
+    {% endfor %}
+
+</div>
+
+
+</div>
+
+                        </div>
+
+                        <!-- PERSONAL RESPONSE -->
+                        <div class="form-group">
+
+                            <label for="{{ form.personal_response.id_for_label }}">
+                                Tell me more...
+                            </label>
+
+                            {{ form.personal_response }}
+
+                        </div>
+
+                        <!-- PRIVACY DISCLOSURE -->
+                        <p class="form-description">
+                        The responses you provide will be stored anonymously
+                        and used for research purposes only. Neli values privacy
+                        and we will not share your information. Will you consent?
+                        </p>
+
+                        <!-- CONSENT -->
+                        <div class="consent-row">
+
+                        <div class="form-group consent">
+
+                        {{ form.consent }}
+
+                        <label for="{{ form.consent.id_for_label }}">
+                         I consent
+                        </label>
+
+                        </div>
+
+                        <button
+                        type="submit"
+                        class="arrow-button"
+                        aria-label="Enter archive"
+                        >
+                           →
+                        </button>
+
+</div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script src="{% static 'js/00_entry.js' %}"></script>
+
+</body>
+</html>
+
