@@ -1,4 +1,4 @@
-# N3L1F0NT – Commerce Database Design
+# Artist Commerce Database Design
 
 **Relational Database Design | SQL | SQLite | Entity Relationship Modelling | Django ORM**
 
@@ -265,7 +265,7 @@ The following resources have informed the database design and development proces
 
 ---
 
-**Project:** N3L1F0NT Commerce Database  
+**Project:** Artist Commerce Database  
 **Development approach:** Self-directed SQL experimentation and relational database design  
 **Database environment:** SQLite  
 **Integration framework:** Django ORM  
